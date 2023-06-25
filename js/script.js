@@ -1,10 +1,10 @@
 //Getting the scroll amount on the window, used for the sticky header
 $(document).ready(function () {
-  $(window).on("scroll", function () {
+  $(window).on('scroll',function(){
     var scroll = $(window).scrollTop();
-    if (scroll >= 50) {
+    if(scroll >=50){
       $(".sticky").addClass("stickyadd");
-    } else {
+    }else{
       $(".sticky").removeClass("stickyadd");
     }
   });
@@ -34,7 +34,20 @@ $(document).ready(function () {
     offset: '90%'
   })
 
- 
+  var filterizd = $('.filter-container').filterizr({
+    animationDuration: .5,
+    
+    });
+    
+
+  //OWL CAROUSEL FUNCTION
+  $(".owl-carousel").owlCarousel({
+    loop:true, 
+    autoplay:true,
+    autoplayTimeout:4000, 
+    items:2, 
+    animateIn: "fadeInRight"
+  });
 
  
 

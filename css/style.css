@@ -36,7 +36,6 @@ p {
     padding: 5px 20px;
     background-color: #A31739 !important;
     color: #fff !important;
-
 }
 
 /* NAVIGATION */
@@ -195,4 +194,33 @@ header {
     width: 40px;
     margin: 15px auto;
     background: #A31739;
+}
+
+/*  CLIENT FEEDBACKS  */
+
+.testimony-class .test-item{
+  max-width: 100vh;
+  margin: 50px auto;
+
+}
+
+.testimony-class .test-item .test-img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.testimony-class .test-item i{
+  color: #A31739;
+}
+
+.test-item p.test-name{
+  font-size: 11px;
+}
+
+/*  PORTFOLIO PHOTOS  */
+
+.work .card-wrapper{
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
