@@ -21,6 +21,24 @@ p {
   color: #6c757d;
 }
 
+.r-p{
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+
+.bg-sec{
+    background: #F8F9FA;
+
+}
+
+.r-btn{
+    padding: 5px 20px;
+    background-color: #A31739 !important;
+    color: #fff !important;
+
+}
+
 /* NAVIGATION */
 
 nav .r-nav {
@@ -31,7 +49,7 @@ nav .r-nav {
 
 nav .navbar-brand {
   font-size: 30px;
-  color: #fff;
+  color: #A31739;
 }
 
 nav .navbar-nav li a {
@@ -120,3 +138,61 @@ header {
     color: #fff;
 }
 
+/*  ABOUT US    */
+
+.about li a{
+    color: #000; 
+    display: inline-block;
+    height: 42px;
+    width: 42px;
+    font-size: 20px;
+    border: 2px solid #d4d4d4;
+    border-radius: 50%;
+    line-height: 38px;
+    transition: 0.5 all;
+    text-align: center;
+}
+
+.about li a:hover{
+    color: #A31739;
+}
+
+/*  SKILLS AND EXPERIENCE    */
+
+.exp-class .progress{
+    height: 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.progress-bar{
+    background-color: #A31739 !important;
+}
+
+.exp-class label{
+    font-size: 20px;
+    margin: 10px;
+
+}
+
+/*  SERVICES SECTION    */
+
+.card, .card-header{
+    background: #F8F9FA !important;
+
+}
+
+.card-header{
+    border: none !important;
+}
+
+.services-class  .card-header i{
+    font-size: 50px;
+}
+
+.service-border{
+    height: 2px;
+    width: 40px;
+    margin: 15px auto;
+    background: #A31739;
+}
