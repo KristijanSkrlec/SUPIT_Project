@@ -1,5 +1,10 @@
-//Getting the scroll amount on the window, used for the sticky header
 $(document).ready(function () {
+
+  //ADDING THE PRELOADER ANIMATION 
+$(window).on('load',function(){
+  $('.preloader').addClass('complete')
+});
+
   $(window).on('scroll',function(){
     var scroll = $(window).scrollTop();
     if(scroll >=50){
@@ -49,7 +54,37 @@ $(document).ready(function () {
     animateIn: "fadeInRight"
   });
 
- 
+  //SMOOTH SCROLL
+  $('a').smoothScroll({
+
+    speed:2000,
+  });
+
+  
+// adding fadeInUp animation to child of div with class .way-col
+var $child = $('.way-fade-up').children();
+$child.each(function(){
+  var self= $(this);
+  $(this).waypoint(function(){
+    self.addClass('animated fadeInUp');
+  },{offset: '90%'});
+});
+
+var $child = $('.way-fade-left').children();
+$child.each(function(){
+  var self= $(this);
+  $(this).waypoint(function(){
+    self.addClass('animated fadeInLeft');
+  },{offset: '90%'});
+});
+
+var $child = $('.way-fade-right').children();
+$child.each(function(){
+  var self= $(this);
+  $(this).waypoint(function(){
+    self.addClass('animated fadeInRight');
+  },{offset: '90%'});
+});
 
 
 });

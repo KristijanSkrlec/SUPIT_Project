@@ -39,18 +39,14 @@ p {
 }
 
 /* NAVIGATION */
-
-nav .r-nav {
-  background: transparent;
-  padding: 20px 0;
-  transition: 0.5s all;
-}
-
 nav .navbar-brand {
   font-size: 30px;
   color: #A31739;
+  transition: 0.5s all;
 }
-
+nav .navbar-nav li {
+  margin-left: 15px;
+}
 nav .navbar-nav li a {
   color: rgba(255, 255, 255, 0.8) !important;
   font-size: 16px;
@@ -58,9 +54,10 @@ nav .navbar-nav li a {
   font-weight: 600;
   font-family: "Nunito", sans-serif;
 }
-
-nav .navbar-nav li {
-  margin-left: 15px;
+nav.r-nav {
+  background: transparent;
+  padding: 20px 0px;
+  transition: 0.5s all;
 }
 
 nav.r-nav.stickyadd {
@@ -69,22 +66,24 @@ nav.r-nav.stickyadd {
   box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.05);
   transition: 0.5s all ease-in-out;
 }
-
 nav.stickyadd .navbar-brand {
   color: #000;
   font-size: 40px;
   transition: 0.5s all;
 }
-
 nav.stickyadd .navbar-nav .nav-link {
   color: #000 !important;
 }
 .navbar .hamburger {
   color: #fff;
 }
-
-navbar.stickyadd .hamburger {
+nav.stickyadd .hamburger {
   color: #000;
+}
+
+nav *,
+header * {
+  animation-delay: 0.5s;
 }
 
 /*  HEADER SECTION  */
@@ -221,6 +220,97 @@ header {
 /*  PORTFOLIO PHOTOS  */
 
 .work .card-wrapper{
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+/*  CONTACT ME  */
+
+.contact .r-icon
+{
+  font-size: 50px;
+  text-align: center;
+}
+
+/*  FOOTER  */
+footer{
+  height: 200px;
+  background: #A31739;
+}
+
+footer .r-icon a{
+  font-size: 20px;
+  color: #6c757d;
+  padding: 10px; 
+  border: 1px solid #6c757d;
+  border-radius: 50%;
+}
+
+footer .r-icon a:hover{
+  border: 1px solid #eee;
+  color: #eee; 
+  transition: .5s all; 
+}
+
+/*  PRELOADER CIRCLE ANIMATION  */
+.preloader{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: red;
+  z-index: 99998;
+} 
+.preloader:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+  transition: 1s;
+}
+.preloader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+  transition: 1s;
+}
+
+.preloader.complete:before {
+  bottom: -50%;
+}
+.preloader.complete:after {
+  top: -50%;
+}
+
+.preloader.complete {
+  visibility: hidden;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid rgba(163, 23, 57, 0.65);
+  border-top: 10px solid #A31739;
+  animation: animate 1.5s infinite linear;
+  z-index: 99999;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
