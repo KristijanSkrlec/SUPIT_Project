@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="lib/owl.carousel.min.css" />
     <link rel="stylesheet" href="lib/owl.theme.default.min.css" />
     <link rel="icon" href="img/LionTransparent.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Skrlec Visuals</title>
     <link
       rel="stylesheet"
@@ -59,59 +60,183 @@
               <a href="#contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <button class="btn r-btn" data-filter="all" data-toggle="modal" data-target="#myModal">Sign Up</button>
+              <button
+                id="signupBtn"
+                class="btn r-btn"
+                data-filter="all"
+                data-toggle="modal"
+                data-target="#myModal"
+              >
+                Sign Up
+              </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-     <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="btn r-btn" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"></h4>
-        </div>
-        <div class="modal-body">
-          <div class="modal-body p-5 pt-0">
-            <form class="">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-              <button class="w-100 mb-2 btn btn-lg rounded-3 r-btn" type="submit">Sign up</button>
-              <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-              <hr class="my-4">
-              <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-              <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"/><i class="fab fa-twitter"></i></svg>
-                Sign up with Twitter
-              </button>
-              <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"/><i class="fab fa-facebook"></i></svg>
-                Sign up with Facebook
-              </button>
-              <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"/><i class="fab fa-github"></i></svg>
-                Sign up with GitHub
-              </button>
-            </form>
+    <!-- SIGN UP Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="btn r-btn" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body p-5 pt-0">
+              <form class="">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="iprezime@racunarstvo.hr"
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control rounded-3"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <button
+                  class="w-100 mb-2 btn btn-lg rounded-3 r-btn"
+                  type="submit"
+                >
+                  Sign up
+                </button>
+                <small class="text-body-secondary"
+                  >By clicking Sign up, you agree to the terms of use.</small
+                >
+                <hr class="my-4" />
+                <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                <button
+                  class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                  type="submit"
+                >
+                  <svg class="bi me-1" width="16" height="16">
+                    <use xlink:href="#twitter" />
+                    <i class="fab fa-twitter"></i>
+                  </svg>
+                  Sign up with Twitter
+                </button>
+                <button
+                  class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                  type="submit"
+                >
+                  <svg class="bi me-1" width="16" height="16">
+                    <use xlink:href="#facebook" />
+                    <i class="fab fa-facebook"></i>
+                  </svg>
+                  Sign up with Facebook
+                </button>
+                <button
+                  class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                  type="submit"
+                >
+                  <svg class="bi me-1" width="16" height="16">
+                    <use xlink:href="#github" />
+                    <i class="fab fa-github"></i>
+                  </svg>
+                  Sign up with GitHub
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">
+              Book a Photoshoot
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="shootType">Photoshoot Type</label>
+                <select class="form-control" id="shootType">
+                  <option>Portrait</option>
+                  <option>Physique</option>
+                  <option>Event</option>
+                  <option>Product</option>
+                  <option>Drone</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" />
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn r-btn">Submit</button>
+          </div>
         </div>
       </div>
-      
     </div>
-  </div>
 
     <header id="home">
       <div class="container-fluid header-content">
@@ -130,7 +255,14 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Delectus, quo cum! Suscipit quis quasi distinctio?
               </p>
-              <a href="#" class="btn" style="border-color: #a31739"
+              <a
+                href="#"
+                id="signupBtn"
+                data-filter="all"
+                data-toggle="modal"
+                data-target="#bookingModal"
+                class="btn"
+                style="border-color: #a31739"
                 >Book a Photoshoot</a
               >
             </div>
@@ -336,7 +468,7 @@
       <div class="container text-center">
         <div class="row way-fade-up">
           <div class="col">
-            <h3 class="mb-4 ">Get in Contact!</h3>
+            <h3 class="mb-4">Get in Contact!</h3>
             <a href="#" class="btn r-btn">Hire Me</a>
           </div>
         </div>
