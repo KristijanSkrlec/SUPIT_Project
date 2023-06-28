@@ -136,6 +136,12 @@ header {
     color: #fff;
 }
 
+.bookShoot:hover{
+  background-color: #A31739 !important;
+  transition: .75s all;
+  color: #fff !important;
+}
+
 /*  ABOUT US    */
 
 .about li a{
